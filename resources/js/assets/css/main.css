@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .awesome-scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-purple-800 scrollbar-track-slate-900;
+  }
+  /* sidebar top link active */
+  .ta-sidebar .top-link.active {
+    @apply bg-blue-800 text-white;
+  }
+
+  /* sidebar sub link active */
+  .ta-sidebar .sub-link.active {
+    @apply bg-slate-300 dark:bg-slate-300/10;
+  }
+
+  .btn {
+    @apply text-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 dark:hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150;
+  }
+}

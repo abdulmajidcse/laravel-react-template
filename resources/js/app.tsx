@@ -1,10 +1,11 @@
 import "./bootstrap";
+import "./assets/css/main.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from "./Main";
+import AppRoutes from "./AppRoutes.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <Main />
+        <AppRoutes />
     </React.StrictMode>
 );

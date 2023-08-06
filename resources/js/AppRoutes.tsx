@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import FrontendLayout from "./components/layouts/FrontendLayout";
 import AuthLayout from "./components/layouts/AuthLayout";
 import Dashboard from "./pages/auth/Dashboard";
 import GuestLayout from "./components/layouts/GuestLayout";
@@ -14,11 +12,6 @@ export default function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<FrontendLayout />}>
-                    <Route index element={<Home />} />
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-
                 <Route path="auth" element={<GuestLayout />}>
                     <Route path="login" element={<Login />} />
                     <Route path="register" element={<Register />} />
@@ -29,6 +22,8 @@ export default function AppRoutes() {
                     <Route path="tables" element={<Tables />} />
                     <Route path="forms" element={<Forms />} />
                 </Route>
+
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );

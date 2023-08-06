@@ -19,4 +19,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::view('auth/{path?}', 'react')->where('path', '.*');
+Route::view('{path?}', 'react')->where('path', '.*');

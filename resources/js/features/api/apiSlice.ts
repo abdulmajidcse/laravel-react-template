@@ -49,13 +49,20 @@ export const apiSlice = createApi({
         return {
             login: build.mutation({
                 query: (data) => ({
-                    url: "/auth/login",
+                    url: "/login",
                     method: "post",
                     data,
+                }),
+            }),
+
+            logout: build.mutation<any, void>({
+                query:() => ({
+                    url: "/logout",
+                    method: "post",
                 }),
             }),
         };
     },
 });
 
-export const { useLoginMutation } = apiSlice;
+export const { useLoginMutation, useLogoutMutation } = apiSlice;

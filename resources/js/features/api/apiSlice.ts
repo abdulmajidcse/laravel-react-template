@@ -39,7 +39,7 @@ const axiosBaseQuery =
         }
     };
 
-export const apiService = createApi({
+export const apiSlice = createApi({
     reducerPath: "api",
     baseQuery: axiosBaseQuery({
         baseUrl: import.meta.env.VITE_APP_URL,
@@ -58,4 +58,4 @@ export const apiService = createApi({
     },
 });
 
-export const { useLoginMutation } = apiService;
+export const { useLoginMutation } = apiSlice;

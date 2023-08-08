@@ -45,24 +45,30 @@ export const apiSlice = createApi({
         baseUrl: import.meta.env.VITE_APP_URL,
     }),
     tagTypes: ["Auth"],
-    endpoints: (build) => {
-        return {
-            login: build.mutation({
-                query: (data) => ({
-                    url: "/login",
-                    method: "post",
-                    data,
-                }),
+    endpoints: (build) => ({
+        register: build.mutation({
+            query: (data) => ({
+                url: "/register",
+                method: "post",
+                data,
             }),
+        }),
+        login: build.mutation({
+            query: (data) => ({
+                url: "/login",
+                method: "post",
+                data,
+            }),
+        }),
 
-            logout: build.mutation<any, void>({
-                query:() => ({
-                    url: "/logout",
-                    method: "post",
-                }),
+        logout: build.mutation<any, void>({
+            query: () => ({
+                url: "/logout",
+                method: "post",
             }),
-        };
-    },
+        }),
+    }),
 });
 
-export const { useLoginMutation, useLogoutMutation } = apiSlice;
+export const { useRegisterMutation, useLoginMutation, useLogoutMutation } =
+    apiSlice;
